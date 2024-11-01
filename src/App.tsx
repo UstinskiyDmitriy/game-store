@@ -19,7 +19,7 @@ function App() {
   if (currentUser === null) {
     return <Login />;
   }
-
+  
   return (
     <div className={s.main}>
       <Aside handleLogout={handleLogout} />

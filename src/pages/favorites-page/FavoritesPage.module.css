@@ -17,16 +17,16 @@
   animation: rotateShadow 5s infinite linear;
 }
 
+.deleting {
+  animation: deleteCard 0.5s forwards;
+}
+
 .main_content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 50px;
   margin: 2vh 7vw 6vh 7vw;
-}
-
-.card_wrapper {
-  position: relative;
 }
 
 .card_wrapper img {
@@ -139,6 +139,16 @@
   }
   100% {
     box-shadow: 3px 3px 30px rgba(0, 13, 255, 0.627);
+  }
+}
+
+@keyframes deleteCard {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100%{
+    transform: translateX(150%);
   }
 }
 

@@ -16,9 +16,9 @@ function MainHeader() {
     const storedUser = localStorage.getItem('currentUser');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
+      
     }
   }, []);
-
   return (
     <header className={s.header}>
       <div className={s.right}>
