@@ -1,11 +1,11 @@
 .cards_wrapper {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   gap: 5.5vw;
   row-gap: 5vh;
   flex-wrap: wrap;
-  padding: 5vh  5vw 5vh  5vw;
+  padding: 5vh  2vw;
 }
 
 .main_view {
