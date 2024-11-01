@@ -1,6 +1,6 @@
 .header_img {
   height: 50vh;
-  background: url('/public/favorites_page.jpg');
+  background: url('/favorites_page.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
