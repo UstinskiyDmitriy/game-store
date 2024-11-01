@@ -80,9 +80,7 @@ export default function SideBar({handleLogout}:AsideProps) {
               <p>Скоро</p>
             </Link>
           </ul>
-        </div>
 
-        <div className={s.community}>
           <ul>
             <Link
               to="#"
@@ -99,9 +97,7 @@ export default function SideBar({handleLogout}:AsideProps) {
               <p>Общение</p>
             </Link>
           </ul>
-        </div>
 
-        <div className={s.footer}>
           <ul>
             <Link
               to="#"
