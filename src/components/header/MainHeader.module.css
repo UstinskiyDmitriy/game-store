@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: fixed;
+  width: 100%;
+  padding: 2vh  16%  2vh 5%;
+  z-index: 10;
+  transition: .3s ease-in-out;
+  background-color:  #21201e73;
+}
+
+.header ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.header ul li:hover {
+  color: #ffffff80;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  
+  gap: 20px;
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width:1200px) {
+  .header {
+    background-color: transparent;
+    padding: 2vh 2vw;
+  }
+  .header ul  {
+    display: none;
+  }
+}

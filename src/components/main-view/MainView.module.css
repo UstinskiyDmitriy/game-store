@@ -1,0 +1,35 @@
+.overlay {
+  position: relative;
+  height: 100%;
+  width:100%;
+  z-index: -1;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 4vh 5vw 8vh 5vw
+}
+
+.view_description {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  width:fit-content;
+  position: absolute;
+  bottom: 10vh;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    margin-block-start: 9vh;
+  }
+  .view_description {
+    gap: 2vh;
+    top: 18vh
+  }
+}
+

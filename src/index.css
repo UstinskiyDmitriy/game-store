@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  scroll-behavior: smooth;
+}
+:root {
+  --main-bg-color: #21201E;
+  --main-text-color: #fff;
+  --main-font-size: 16px;
+  --main-font-weight: 500;
+}
+body {
+  margin: 0 auto;
+  max-width: 1900px;
+  min-width: 365px;
+  background:var(--main-bg-color);
+  color: var(--main-text-color);
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,p,ul,ol,li {
+  font-family: "Libre Baskerville", serif;
+  font-optical-sizing: auto;
+  font-size: var(--main-font-size);
+  font-weight: var(--main-font-weight);
+  margin:0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+

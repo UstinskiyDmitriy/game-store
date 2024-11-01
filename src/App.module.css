@@ -1,0 +1,11 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: 14.1%;
+}
+
+@media screen and (max-width: 1200px) {
+  .main { 
+    margin-inline-start: 0;
+  }
+}

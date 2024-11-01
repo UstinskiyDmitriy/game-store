@@ -1,0 +1,100 @@
+.main{
+  position: relative;
+}
+
+.header_img {
+  position: sticky;
+  width: 100%;
+  height: 50vh;
+}
+
+.about_card {
+  position: absolute;
+  width: 25%;
+  left: 0.5vw;
+  top: 45vh;
+}
+
+.main_content {
+  margin:2vh 3vw 5vh 26vw; 
+}
+
+.game_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  width: 50%;
+}
+
+.ganre_wrapper{
+  display: flex;
+  gap: 1vw;
+}
+
+.ganre_wrapper p {
+  background-color: #7e7d7d7b;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor:pointer;
+}
+.game_desc h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+.game_info_table {
+  column-gap: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin: 0;
+  row-gap: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.game_info_table dt {
+  color: #a1a1a1
+}
+
+.game_info_table a {
+  color: #fff;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  margin-block-start: 5vh;
+}
+
+.about h2 {
+  color: #a1a1a1;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    padding: 0 10px
+  }
+
+  .header_img {
+    display: none;
+  }
+
+  .about_card {
+    display:contents;
+  }
+
+  .game_desc {
+    width: 90%;
+  }
+
+  .main_content {
+   margin: 5vh 2vw;
+   
+  }
+}

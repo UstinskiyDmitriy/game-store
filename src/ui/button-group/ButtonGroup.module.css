@@ -1,0 +1,28 @@
+.button_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 3vw;
+}
+
+.about_button {
+  padding: 1vh 2vw;
+  border:none;
+ 
+  border-radius: 14px;
+  background: rgb(97, 0, 194);  
+  color: #fff;
+  font-size: 22px;
+  transition: .3s ease-in-out;
+}
+
+.about_button:hover {
+  background: rgb(118, 3, 233);
+  box-shadow: 8px 8px 6px  rgb(140, 137, 137);
+  scale: 1.02;  
+}
+
+@media screen and (max-width: 1200px) {
+  .about_button {
+    font-size: 14px;
+  }
+}

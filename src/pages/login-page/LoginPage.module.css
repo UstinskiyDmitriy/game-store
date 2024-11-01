@@ -1,0 +1,152 @@
+.authContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #2c2c2c;
+  padding: 20px;
+  
+}
+
+.formContainer {
+  background-color: #3d3d3d;
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  animation: Bounce 2s ease-in-out 0s 1 normal both, rotateShadow 5s infinite linear;
+}
+
+.title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input {
+  padding: 12px;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  background-color: #2c2c2c;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #666666;
+}
+
+.button {
+  padding: 12px;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #5a5a5a;
+}
+
+.switchText {
+  color: #cccccc;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.switchButton {
+  background: none;
+  border: none;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+}
+
+.switchButton:hover {
+  color: #dddddd;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@keyframes rotateShadow {
+  0% {
+    box-shadow: 3px 3px 30px rgba(0, 13, 255, 0.627);
+  }
+  25% {
+    box-shadow: -3px 3px 20px rgba(0, 255, 128, 0.5);
+  }
+  50% {
+    box-shadow: -3px -3px 10px rgba(33, 35, 37, 0.5);
+  }
+  75% {
+    box-shadow: 3px -3px 20px rgba(0, 255, 128, 0.5);
+  }
+  100% {
+    box-shadow: 3px 3px 30px rgba(0, 13, 255, 0.627);
+    
+  }
+}
+
+@keyframes Bounce {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
