@@ -55,9 +55,12 @@ const removeCard = (cardId: number) => {
         <dd><a href={item.site} target='_blank'>Официальный сайт</a></dd>
         <dt>Рейтинг</dt>
         <dd>{item.rate} из 10</dd>
+      
         <dt>Купить в стим</dt>
         <dd><Link to={`${item.steam}`} target='_blank'><img className={s.steam_img} src="/steam.png" alt="" /></Link></dd>
-        
+        <dt>Цена</dt>
+
+        <dd>{item.price === 'Бесплатно' ? item.price : `${item.price} рублей`}</dd>   
         </dl>
 
      

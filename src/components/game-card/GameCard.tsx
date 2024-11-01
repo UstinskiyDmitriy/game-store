@@ -1,16 +1,7 @@
 import s from './GameCard.module.css'
 import LikeButton from '../../ui/like-button/LikeButton';
 import ButtonGroup from '../../ui/button-group/ButtonGroup';
-
-interface TCard {
-  id: number;
-  image?: string;
-  title?: string;
-  year?: string;
-  ganre?: string[];
-  isonline?:string;
-  site?:string
-}
+import { TCardData } from '../../interfaces/cardInterface';
 
 interface TGameCard {
   id: number;
@@ -19,13 +10,13 @@ interface TGameCard {
   year: string;
   ganre: string[];
   isonline?:string;
-  card: TCard;
+  card: TCardData;
   onClick: () => void
 }
 export default function GameCard({id, image, title, year, ganre, onClick, card}:TGameCard) {
   
   return (
-    <div className={s.main} >
+    <div className={s.main}>
       <div onClick={onClick}>
         <img src={image} alt={title} className={s.image}/>
       </div>

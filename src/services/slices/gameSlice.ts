@@ -1,23 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import CARD_DATA from '../../data/CardData';
+import { TCardData } from '../../interfaces/cardInterface';
 
 
-export interface GameCard {
-  id: number;
-  image: string;
-  about_header_img: string;
-  title: string;
-  year: string;
-  ganre: string[];
-  isonline?: string;
-  site?: string;
-  developer?: string;
-  platforms?: string[];
+export interface GameCard extends TCardData{
   liked?: boolean;
   statusIndex?: number | null;
-  description?: string
-  rate?: number;
-  steam?: string;
 }
 
 interface GamesState {

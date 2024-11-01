@@ -10,7 +10,7 @@ function Register({ setShowLogin }: RegisterPageProps) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-
+  const [name, setName] = useState('')
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
@@ -28,6 +28,7 @@ function Register({ setShowLogin }: RegisterPageProps) {
     }
 
     const newUser = {
+      name,
       email,
       password,
       isAuth: true
@@ -44,12 +45,21 @@ function Register({ setShowLogin }: RegisterPageProps) {
       <div className={s.formContainer}>
         <h2 className={s.title}>Регистрация</h2>
         <form className={s.form} onSubmit={handleSubmit}>
+        <input
+            className={s.input}
+            type="text"
+            placeholder="Имя пользователя"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
           <input
             className={s.input}
             type="email"
             placeholder="Почта"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
           <input
             className={s.input}
@@ -57,6 +67,7 @@ function Register({ setShowLogin }: RegisterPageProps) {
             placeholder="Пароль"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
           <input
             className={s.input}
@@ -64,6 +75,7 @@ function Register({ setShowLogin }: RegisterPageProps) {
             placeholder="Подтвердить пароль"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
           <button className={s.button} type="submit">
             Зарегистрироваться

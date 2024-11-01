@@ -24,7 +24,6 @@
 .right {
   display: flex;
   align-items: center;
-  
   gap: 20px;
   cursor: pointer;
 }
@@ -33,6 +32,10 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.user p {
+  font-size: 18px;
 }
 
 .user img {

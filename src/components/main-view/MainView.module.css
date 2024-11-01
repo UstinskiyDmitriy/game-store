@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 1200px) {
   .main {
-    margin-block-start: 9vh;
+    margin-block-start: 0vh;
   }
   .view_description {
     gap: 2vh;
