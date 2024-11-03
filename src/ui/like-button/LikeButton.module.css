@@ -1,28 +1,37 @@
+.main {
+  position: relative;
+}
+
 .disabled {
   fill: none;
-  animation:scale-down-center .1s cubic-bezier(.25,.46,.45,.94) backwards
+  animation: scale-down-center .1s cubic-bezier(.25,.46,.45,.94) backwards;
+  cursor: pointer;
 }
 
-.active{
+.active {
   fill: red;
-  animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both
+  animation: scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both;
+  cursor: pointer;
 }
 
-@keyframes scale-in-center{
-  0%{transform:scale(0);
-    opacity:1}
-  100%{
-    transform:scale(1);
-    opacity:1
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1
   }
 }
-@keyframes scale-down-center{
-  0%{
-    transform:scale(1);
-    opacity:1
+
+@keyframes scale-down-center {
+  0% {
+    transform: scale(1);
+    opacity: 1
   }
-  100%{
-    transform:scale(0.6);
-    opacity:1
+  100% {
+    transform: scale(0.6);
+    opacity: 1
   }
 }

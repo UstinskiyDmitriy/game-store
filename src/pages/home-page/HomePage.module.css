@@ -1,11 +1,9 @@
 .cards_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5.5vw;
-  row-gap: 5vh;
-  flex-wrap: wrap;
-  padding: 5vh  2vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  padding: 5vh 5vw;
+  width: 100%;
 }
 
 .main_view {
@@ -16,6 +14,13 @@
 
 @media screen and (max-width: 1200px) {
   .main_view {
-    height: 30vh;
+    height: auto;
+  }
+
+  .cards_wrapper {
+    margin: 0;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-block-start: 20vh;
+    justify-items: center;
   }
 }

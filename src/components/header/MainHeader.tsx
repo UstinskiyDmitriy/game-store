@@ -1,6 +1,7 @@
 import { Bell, Search } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import s from './MainHeader.module.css';
+import CartButton from '../../ui/cart-button/CartButton';
 
 interface User {
   name: string;
@@ -22,6 +23,7 @@ function MainHeader() {
   return (
     <header className={s.header}>
       <div className={s.right}>
+        <CartButton />
         <Search size={24} />
         <Bell size={24} />
         <div className={s.user}>

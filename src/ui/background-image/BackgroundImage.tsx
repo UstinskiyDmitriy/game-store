@@ -1,4 +1,4 @@
-import s from './BackgroundImage.module.css';
+import s from "./BackgroundImage.module.css";
 
 interface BackgroundImageProps {
   image?: string;

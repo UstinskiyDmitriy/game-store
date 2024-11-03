@@ -72,7 +72,7 @@ const CARD_DATA: TCardData[] = [
   {
     id: 5,
     image: "/liers-bar.jpg",
-    about_header_img: "/liers_about.jpg",
+    about_header_img: "/liers-about.jpg",
     title: "Lier's Bar",
     year: "2024",
     ganre: ["Настольная", "Шутер"],
@@ -103,6 +103,24 @@ const CARD_DATA: TCardData[] = [
     price: 'Бесплатно',
     steam:'https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS?snr=1_7_15__13',
     },
+    {
+      id: 7,
+      image: "/rdr2.jpg",
+      about_header_img: "/rdr2about.jpg",
+      title: "Red Dead Redemption 2",
+      year: "2018",
+      ganre: ["Вестерн", "Шутер","Открытый мир"],
+      isonline: "online, offline",
+      developer: "Rockstar Games",
+      platforms: ["PC", "PS4", "XBox One"],
+      site: "https://www.rockstargames.com/reddeadredemption2?ysclid=m2zxh3cgvk512740788",
+      description:
+        "Действие Red Dead Redemption 2, оформленной в духе вестерна, происходит на территории нескольких вымышленных штатов США на рубеже XIX—XX веков. Сюжет игры построен вокруг приключений банды Датча Ван дер Линде; под управлением игрока находится один из членов банды — Артур Морган, а после прохождения сюжетной линии до эпилога — другой член банды, Джон Марстон. После неудачного ограбления парома бандиты вынуждены скрываться в глуши от федеральных агентов и охотников за головами. Red Dead Redemption 2 предлагает игроку свободно путешествовать по обширному миру игры, самостоятельно находя интересные места и занятия ",
+      rate: 8.7,
+      price: 3100,
+      steam:'https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/',
+    },
+    
 ];
 
 export default CARD_DATA;

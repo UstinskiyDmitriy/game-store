@@ -2,9 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import s from "./FavoritesPage.module.css";
 import { RootState } from "../../services/store/store";
 import { deleteCard } from "../../services/slices/gameSlice";
-import { Trash2 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useState } from "react";
+import FavoriteCard from "../../components/favorite-card/FavoriteCard";
 
 export default function FavoritesPage() {
   const favorites = useSelector(
@@ -15,11 +14,11 @@ export default function FavoritesPage() {
 
   const removeCard = (cardId: number) => {
     setDeletingId(cardId);
-    // Задержка перед удалением карточки из store, чтобы анимация успела проиграться
+   
     setTimeout(() => {
       dispatch(deleteCard(cardId));
       setDeletingId(null);
-    }, 500); // 500ms соответствует длительности анимации
+    }, 500);
   };
   return (
     <div className={s.main_wrapper}>
@@ -29,43 +28,19 @@ export default function FavoritesPage() {
           <p className={s.empty_message}>Список желаемого пуст</p>
         )}
         {favorites.map((item) => (
-          <div className={`${s.card_wrapper} ${deletingId === item.id ? s.deleting : ''}`}>
-            <div className={s.image_wrapper}>
-              <img src={item.image} alt={item.title} />
-            </div>
-
-            <div className={s.info}>
-              <h1>{item.title}</h1>
-              <dl className={s.game_info_table}>
-                <dt>Дата выхода</dt>
-                <dd>{item.year}</dd>
-                <dt>Сайт игры</dt>
-                <dd>
-                  <a href={item.site} target="_blank">
-                    Официальный сайт
-                  </a>
-                </dd>
-                <dt>Рейтинг</dt>
-                <dd>{item.rate} из 10</dd>
-
-                <dt>Купить в стим</dt>
-                <dd>
-                  <Link to={`${item.steam}`} target="_blank">
-                    <img className={s.steam_img} src="/steam.png" alt="" />
-                  </Link>
-                </dd>
-                <dt>Цена</dt>
-
-                <dd>
-                  {item.price === "Бесплатно"
-                    ? item.price
-                    : `${item.price} рублей`}
-                </dd>
-              </dl>
-            </div>
-            <div onClick={() => removeCard(item.id)}>
-              <Trash2 className={s.remove_button} />
-            </div>
+          <div className={s.card_wrapper}>
+            <FavoriteCard 
+            id={item.id}
+            image={item.image}
+            title={item.title}
+            year={item.year}
+            site={item.site}
+            rate={item.rate}
+            steam={item.steam}
+            price={item.price}
+            removeCard={removeCard}
+            deletingId={deletingId}
+          />
           </div>
         ))}
       </main>

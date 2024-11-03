@@ -28,8 +28,7 @@ export default function HomePage() {
               id={item.id}
               image={item.image}
               title={item.title}
-              year={item.year}
-              ganre={item.ganre}
+              price={item.price}
               isonline={item.isonline}
               onClick={() => pickCard(item)}
             />
