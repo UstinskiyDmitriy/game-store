@@ -1,9 +1,8 @@
 .card_wrapper {
-  width: 100%;
+  width: 39vw;
   height: 40vh;
   display: flex;
   flex-direction: row;
-  border: 6px solid #fafafa0c;
   border-radius: 20px;
   overflow: hidden;
   position: relative; 
@@ -11,15 +10,7 @@
 }
 
 .deleting {
-  animation: deleteCard 0.5s forwards;
-}
-
-.main_content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 50px;
-  margin: 2vh 7vw 6vh 7vw;
+  animation: deleteCard 1s forwards;
 }
 
 .image_wrapper {
@@ -29,8 +20,7 @@
 .card_wrapper img {
   width:  100%;
   height: 100%;
-  object-fit: fill;
-  border-right: 6px solid #fafafa11;
+  object-fit: cover;
 }
 
 .info {
@@ -135,7 +125,7 @@
   }
 
   100%{
-    transform: translateX(150%);
+    transform: translateX(1000%);
   }
 }
 
@@ -147,6 +137,10 @@
     border: 4px solid #333;
     height: fit-content;
     margin-block-start: 20px;
+  }
+
+  .image_wrapper {
+    width:100%;
   }
 
   .card_wrapper img {
@@ -161,10 +155,6 @@
 
   .info h1 {
     font-weight: 800;
-  }
-
-  .image_wrapper {
-    width: 100%;
   }
 
   .play_status {

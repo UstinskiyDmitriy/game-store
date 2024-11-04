@@ -5,6 +5,15 @@
   background-size: cover;
   background-position: center;
 }
+
+.main_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-block-end: 5vh;
+}
 .empty_message {
   margin: 0 auto;
   font-size: 38px;
@@ -18,12 +27,17 @@
 
 .card_wrapper {
   margin-block-start: 3vh;
-  padding: 0 4vw
+  margin-inline-start: 5vw;
 }
 
 @media screen and (width < 1200px) {
   .main_content {
     margin: 2%;
     row-gap: 0;
+  }
+
+  .card_wrapper {
+    margin-block-start: 0vh;
+    margin-inline-start: 0vw;
   }
 }
