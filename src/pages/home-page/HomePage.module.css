@@ -3,7 +3,6 @@
   flex-direction: row;
   gap: 50px;
   flex-wrap: wrap;
-  
   margin: 5vh 0 5vh 5vw; 
 }
 
@@ -19,7 +18,8 @@
   }
 
   .cards_wrapper {
-    margin:20vh 0 5vh 3vw;
+    margin:20vh 0 5vh 1vw;
+    gap: 20px;
     
   }
 }
