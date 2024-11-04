@@ -19,7 +19,7 @@
 
   .cards_wrapper {
     margin:20vh 0 5vh 1vw;
-    gap: 20px;
-    
+    column-gap: 20px;
+    row-gap: 0;
   }
 }
