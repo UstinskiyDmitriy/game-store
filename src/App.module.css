@@ -1,7 +1,8 @@
 .main {
   display: flex;
   flex-direction: column;
-  margin-inline-start: 14.1%;
+  margin-inline-start: 10%;
+  width: 100vw;
 }
 
 @media screen and (max-width: 1200px) {

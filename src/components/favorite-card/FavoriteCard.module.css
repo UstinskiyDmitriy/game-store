@@ -163,6 +163,10 @@
     font-weight: 800;
   }
 
+  .image_wrapper {
+    width: 100%;
+  }
+
   .play_status {
     padding: 0 0 10px 0;
   }

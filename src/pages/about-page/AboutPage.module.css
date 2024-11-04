@@ -11,12 +11,12 @@
 .about_card {
   position: absolute;
   width: 25%;
-  left: 1vw;
+  left: 4vw;
   top: 45vh;
 }
 
 .main_content {
-  margin:2vh 3vw 5vh 26vw; 
+  margin:2vh 3vw 5vh 30vw; 
 }
 
 .game_desc {

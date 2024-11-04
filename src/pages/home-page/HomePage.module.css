@@ -1,9 +1,10 @@
 .cards_wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 50px;
-  padding: 5vh 5vw;
-  width: 100%;
+  flex-wrap: wrap;
+  
+  margin: 5vh 0 5vh 5vw; 
 }
 
 .main_view {
@@ -18,9 +19,7 @@
   }
 
   .cards_wrapper {
-    margin: 0;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    margin-block-start: 20vh;
-    justify-items: center;
+    margin:20vh 0 5vh 3vw;
+    
   }
 }
