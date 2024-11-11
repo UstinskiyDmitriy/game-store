@@ -4,8 +4,6 @@ import FavoritesPage from './pages/favorites-page/FavoritesPage';
 import HomePage from './pages/home-page/HomePage';
 import { Routes, Route } from 'react-router-dom';
 import NewsPage from './pages/news-page/NewsPage';
-import Login from './pages/login-page/LoginPage';
-import Aside from './components/side-bar/Aside';
 import MainHeader from './components/header/MainHeader';
 import CartPage from './pages/cart-page/CartPage';
 
