@@ -1,13 +1,14 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   position: fixed;
-  width: 100%;
-  padding: 2vh  16%  2vh 5%;
+  width: 100vw;
+  padding: 3vh 3vw;
   z-index: 10;
   transition: .3s ease-in-out;
-  background-color:  #21201e73;
+  background-color: #92919185;
+  
 }
 
 .header ul {
@@ -21,11 +22,61 @@
   color: #ffffff80;
 }
 
+.main_logo {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  transition: .5s ease-in-out;
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  right: 45vw;
+  top: 1vh;
+}
+
+.main_logo:hover {
+  color: orange;
+}
+
+.main_logo h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.catalog {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  background-color: orangered;
+  font-size: 18px;
+}
+
+.catalog:hover {
+  background-color: red;
+}
+
 .right {
   display: flex;
   align-items: center;
   gap: 20px;
   cursor: pointer;
+}
+
+.right_icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.right_icons div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right a {
+  color: #fff;
 }
 
 .user {
@@ -44,12 +95,40 @@
   border-radius: 50%;
 }
 
+.hearts:hover {
+  color: red;
+  fill: red
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  transition: .5s ease-in-out;
+  position: relative;
+}
+
+.cart p {
+position: absolute;
+bottom: 17px;
+left: 15px;
+}
+
+.cart:hover{
+  color: orange
+}
+
 @media screen and (max-width:1200px) {
   .header {
-    background-color: transparent;
-    padding: 2vh 2vw;
+    background-color: #333;
+    padding: 2vh 4vw;
   }
   .header ul  {
     display: none;
+  }
+ 
+  .main_logo {
+    left: 24vw;
   }
 }
