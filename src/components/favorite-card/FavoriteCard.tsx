@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 interface FavoriteCard {
   id: number;
-  image: string;
+  image: string | undefined;
   title: string;
-  year: string;
+  year: string | undefined | number;
   site?: string;
   rate?: number;
   steam?: string;

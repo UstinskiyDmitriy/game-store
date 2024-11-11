@@ -13,14 +13,9 @@
   animation: deleteCard 1s forwards;
 }
 
-.image_wrapper {
-  width: 30vw;
-}
-
 .card_wrapper img {
   width:  100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .info {
@@ -39,23 +34,6 @@
   display: flex;
   flex-direction: column;
   gap: 1vh;
-}
-
-.play_status_button {
-  padding: 1vh 2vw;
-  border-radius: 5px;
-  border: none;
-  background-color: rgba(253, 247, 247, 0.395);
-  font-size: 17px;
-  color: #fff;
-  transition: background-color 0.3s ease;
-  
-}
-
-.play_status_button_active {
-  background-color: rgba(17, 240, 24, 0.518);
-  box-shadow: 2px -2px 3px #01ff16;
-  scale: 1.1
 }
 
 .game_info_table {
@@ -155,13 +133,5 @@
 
   .info h1 {
     font-weight: 800;
-  }
-
-  .play_status {
-    padding: 0 0 10px 0;
-  }
-
-  .play_status_button {
-    padding: 1vh 24vw;
   }
 }
