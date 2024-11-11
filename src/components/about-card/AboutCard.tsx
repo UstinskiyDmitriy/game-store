@@ -8,7 +8,7 @@ import LikeButton from "../../ui/like-button/LikeButton";
 
 export default function AboutCard() {
   const selectedCard = useSelector(
-    (state: RootState) => state.games.selectedCard
+    (state: RootState) => state.cards.selectedCard
   );
   
   return (
