@@ -7,7 +7,7 @@ import FavoriteCard from "../../components/favorite-card/FavoriteCard";
 
 export default function FavoritesPage() {
   const favorites = useSelector(
-    (state: RootState) => state.games.favoriteCards
+    (state: RootState) => state.cards.favoriteCards
   );
   const dispatch = useDispatch();
   const [deletingId, setDeletingId] = useState<number | null>(null);

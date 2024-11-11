@@ -7,7 +7,7 @@ interface TMainView {
     id: number;
     image?: string;
     title?: string;
-    year?: string;
+    year?: string | undefined | number;
     ganre?: string[];
     isonline?: string;
     site?: string;

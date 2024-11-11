@@ -7,8 +7,8 @@ import { setSelectedCard } from '../../services/slices/gameSlice';
 
 export default function HomePage() {
   const dispatch = useDispatch();
-  const cards = useSelector((state: RootState) => state.games.cards);
-  const selectedCard = useSelector((state: RootState) => state.games.selectedCard);
+  const cards = useSelector((state: RootState) => state.cards.filteredCards);
+  const selectedCard = useSelector((state: RootState) => state.cards.selectedCard);
   
   const pickCard = (card: typeof cards[0]) => {
     dispatch(setSelectedCard(card));

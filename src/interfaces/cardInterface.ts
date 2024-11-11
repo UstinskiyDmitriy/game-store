@@ -1,10 +1,10 @@
 export interface TCardData {
   id: number;
-  image: string;
-  about_header_img: string;
+  image?: string;
+  about_header_img?: string;
   title: string;
-  year: string;
-  ganre: string[];
+  year?: string | number | undefined;
+  ganre?: string[];
   isonline?: string;
   site?: string;
   platforms?: string[];
@@ -12,5 +12,5 @@ export interface TCardData {
   description?: string;
   rate?: number;
   steam?: string;
-  price?: string | number;
+  price?: string | number | undefined;
 }

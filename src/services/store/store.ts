@@ -1,9 +1,12 @@
+// store.ts
 import { configureStore } from '@reduxjs/toolkit';
-import gamesReducer from '../slices/gameSlice';
+import cardsReducer from '../slices/gameSlice';
+import cartReducer from '../slices/cartSlice';
 
 export const store = configureStore({
   reducer: {
-    games: gamesReducer,
+    cards: cardsReducer,
+    cart: cartReducer,
   },
 });
 

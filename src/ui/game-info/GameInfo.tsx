@@ -2,7 +2,7 @@ import s from './GameInfo.module.css';
 
 interface GameInfoProps {
   title?: string;
-  year?: string;
+  year?: string | number | undefined;
   genre?: string[];
   isOnline?: string;
 }
@@ -13,7 +13,10 @@ export default function GameInfo({ title, year, genre, isOnline }: GameInfoProps
       <h2>{title}</h2>
       <ul>
         <li>{year}</li>
-        <li>{genre}</li>
+        {genre?.map((item) => 
+         <li>{item}</li>
+        )}
+       
         <li>{isOnline}</li>
       </ul>
     </div>

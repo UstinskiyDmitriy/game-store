@@ -7,28 +7,31 @@ import NewsPage from './pages/news-page/NewsPage';
 import Login from './pages/login-page/LoginPage';
 import Aside from './components/side-bar/Aside';
 import MainHeader from './components/header/MainHeader';
+import CartPage from './pages/cart-page/CartPage';
 
 function App() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
 
-  const handleLogout = () => {
-    localStorage.removeItem('currentUser');
-    window.location.reload();
-  };
+  // Логирован если пользователь не зарегестрирован
+  // const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
 
-  if (currentUser === null) {
-    return <Login />;
-  }
+  // const handleLogout = () => {
+  //   localStorage.removeItem('currentUser');
+  //   window.location.reload();
+  // };
+
+  // if (currentUser === null) {
+  //   return <Login />;
+  // }
   
   return (
     <div className={s.main}>
-      <Aside handleLogout={handleLogout} />
       <MainHeader />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/about/:id' element={<AboutGame />} />
         <Route path='/favorites' element={<FavoritesPage />} />
         <Route path='/news' element={<NewsPage />} />
+        <Route path='/cart' element={<CartPage />}/>
       </Routes>
     </div>
   );

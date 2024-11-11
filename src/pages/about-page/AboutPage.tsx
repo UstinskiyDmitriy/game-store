@@ -6,7 +6,7 @@ import AboutCard from '../../components/about-card/AboutCard';
 export default function AboutGame() {
   
 const selectedCard = useSelector(
-  (state: RootState) => state.games.selectedCard
+  (state: RootState) => state.cards.selectedCard
 );
 const platforms = selectedCard.platforms?.join(', ')
   return (
@@ -17,7 +17,7 @@ const platforms = selectedCard.platforms?.join(', ')
         <div className={s.game_desc}>
         <h1>{selectedCard.title}</h1>
         <div className={s.ganre_wrapper}>
-          {selectedCard.ganre.map((item)=> <p>{item}</p>)}
+          {selectedCard.ganre?.map((item)=> <p>{item}</p>)}
         </div>
         <dl className={s.game_info_table}>
         <dt>Дата выхода</dt>

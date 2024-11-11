@@ -7,13 +7,14 @@ import s from './LikeButton.module.css'
 
 interface TLikeButton {
   id: number;
+  size?: number;
 }
 
-export default function LikeButton({ id}: TLikeButton) {
+export default function LikeButton({ id, size}: TLikeButton) {
   const dispatch = useDispatch();
   
   const isLiked = useSelector((state: RootState) => 
-    state.games.cards.find((card: GameCard) => card.id === id)?.liked
+    state.cards.cards.find((card: GameCard) => card.id === id)?.liked
   );
 
   const handleLike = (e: React.MouseEvent) => {
@@ -27,6 +28,7 @@ export default function LikeButton({ id}: TLikeButton) {
         <Heart 
           onClick={handleLike} 
           className={isLiked ? `${s.active}` : `${s.disabled}`}
+          size={size}
         />
        
       </div>

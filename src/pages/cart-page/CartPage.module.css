@@ -1,0 +1,49 @@
+.main {
+  margin-block-start: 15vh;
+  margin-inline-start: 3vw;
+  margin-block-end: 5vh;
+  
+}
+
+.main h2 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.main_content_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-block-start: 10vh;
+  padding: 2vh 0vw;
+  position: relative;
+}
+
+.cards_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cart_form_wrapper {
+  position: fixed;
+  right: 50px;
+  width: 25vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    margin:10vh 2vw 2vh 2vw;
+  }
+
+  .main_content_wrapper {
+    flex-direction: column;
+    margin-block-start: 0;
+  }
+
+  .cart_form_wrapper {
+    position: static;
+    width: 100%;
+    margin-block-start: 30px;
+  }
+}

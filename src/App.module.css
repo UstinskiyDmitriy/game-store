@@ -1,7 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  margin-inline-start: 10%;
   width: 100vw;
 }
 
