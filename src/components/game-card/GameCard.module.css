@@ -64,7 +64,7 @@
   z-index: 1;
 }
 
-.overlay div {
+.overlay .cart, .overlay .cart_disabled {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,12 +74,20 @@
   border-radius: 50%;
 }
 
-.overlay .cart {
+ .cart {
   background-color: orange;
 }
 
-.overlay .like {
-  background-color: #414141;
+.cart_disabled {
+  background-color: #333;
+}
+
+.cart:hover {
+  background-color: rgb(255, 72, 0);
+}
+
+.cart:active {
+  scale: 0.9
 }
 
 .main:hover .overlay {
@@ -89,7 +97,7 @@
 
 @media screen and (max-width: 1200px) {
   .main {
-    width: 180px;
+    width: 170px;
   }
   .main:hover {
     scale: none;
@@ -124,7 +132,6 @@
 
   .overlay div {
     width: 40px; 
-    height: 40px;
   }
 
   .overlay .cart {
