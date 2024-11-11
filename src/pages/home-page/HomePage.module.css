@@ -17,6 +17,7 @@
 @media screen and (max-width: 1200px) {
   .main_view {
     height: auto;
+    margin-block-start: 9vh;
   }
 
   .cards_wrapper {
