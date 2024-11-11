@@ -99,11 +99,7 @@
   .main {
     width: 170px;
   }
-  .main:hover {
-    scale: none;
-    outline: none;
-  }
-
+  
   .image {
     border-radius: 20px;
   }
@@ -128,24 +124,21 @@
   .overlay {
     position: static; 
     opacity: 1; 
+    justify-content: space-between;
+    padding: 0 2vw;
   }
 
   .overlay div {
-    width: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
   }
-
-  .overlay .cart {
-    border-radius: 0;
-    width: 25vw;
-    border-radius: 20px;
-  }
-
-  .overlay .cart::after {
-    content: 'Купить';
-    padding-inline-end: 5px;
-  }
-
   .main:hover .image {
     filter: none; 
+  }
+
+  .main:hover {
+    scale: none;
+    outline: none;
   }
 }

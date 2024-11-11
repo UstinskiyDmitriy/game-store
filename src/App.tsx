@@ -9,18 +9,6 @@ import CartPage from './pages/cart-page/CartPage';
 
 function App() {
 
-  // Логирован если пользователь не зарегестрирован
-  // const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
-
-  // const handleLogout = () => {
-  //   localStorage.removeItem('currentUser');
-  //   window.location.reload();
-  // };
-
-  // if (currentUser === null) {
-  //   return <Login />;
-  // }
-  
   return (
     <div className={s.main}>
       <MainHeader />
