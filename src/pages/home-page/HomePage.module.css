@@ -1,11 +1,10 @@
 .cards_wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 4vh 2vw
+  justify-items: center;
+  grid-gap: 30px;
+  padding: 4vh 2vw;
 }
 
 .main_view {
@@ -15,13 +14,17 @@
 }
 
 @media screen and (max-width: 1200px) {
+
+  .cards_wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
   .main_view {
     height: auto;
     margin-block-start: 9vh;
   }
 
   .cards_wrapper {
-    margin:20vh 0 5vh 1vw;
+    margin-block-start: 20vh;
     column-gap: 20px;
     row-gap: 0;
   }

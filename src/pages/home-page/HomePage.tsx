@@ -18,7 +18,7 @@ export default function HomePage() {
     <div className={s.main}>
       <main className={s.main_content_wrapper}>
         <div className={s.main_view}>
-          <MainView card={selectedCard} />
+          <MainView card={selectedCard}/>
         </div>
         <div className={s.cards_wrapper}>
           {cards.map((item) => (

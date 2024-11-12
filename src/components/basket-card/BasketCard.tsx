@@ -21,16 +21,11 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
     if (count > 1) {
       setCount(count - 1);
       dispatch(decrementQuantity({ id, price }));
-    } else {
-      setCount(count - 1);
-      setTimeout(() => {
-        dispatch(removeFromCart(id));
-      }, 100);
     }
   };
 
   const removeCard = () => {
-    dispatch(removeFromCart(id));
+    dispatch(removeFromCart({ id, count }));
   };
 
   return (
@@ -42,7 +37,7 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
         <div className={s.title}>
           <h3 className={s.card_title}>{title}</h3>
           <div className={s.buttons}>
-            <LikeButton id={id} size={35}/>
+            <LikeButton id={id} size={35} />
             <LucideTrash2 size={50} className={s.trash} onClick={removeCard} />
           </div>
         </div>
@@ -58,7 +53,7 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
               <p>+</p>
             </div>
           </div>
-          {price === "Бесплатно" ? <p>{price}</p> : <p>{price} рублей</p>}
+          <p>{price * count} руб.</p>
         </div>
       </div>
     </div>

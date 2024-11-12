@@ -17,7 +17,7 @@ interface TMainView {
 export default function MainView({ card, showDescription = true }: TMainView) {
   return (
     <div className={s.main}>
-      <BackgroundImage image={card.image} alt={card.title} />
+     <BackgroundImage image={card.image} alt={card.title} />
       <div className={s.wrapper}>
         <div></div>
         {showDescription && (

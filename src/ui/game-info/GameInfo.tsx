@@ -14,7 +14,7 @@ export default function GameInfo({ title, year, genre, isOnline }: GameInfoProps
       <ul>
         <li>{year}</li>
         {genre?.map((item) => 
-         <li>{item}</li>
+         <li key={title}>{item}</li>
         )}
        
         <li>{isOnline}</li>

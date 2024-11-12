@@ -59,6 +59,6 @@
 @media screen and (max-width: 1200px) {
   .main {
     width: 100%;
-    margin-block-start: 8vh;
+    margin-block-start: 10vh;
   }
 }

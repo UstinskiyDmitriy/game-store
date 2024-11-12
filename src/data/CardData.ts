@@ -20,40 +20,6 @@ const CARD_DATA: TCardData[] = [
   },
   {
     id: 2,
-    image: "/cs.jpg",
-    about_header_img: "/cs_about.jpg",
-    title: "Counter-Strike 2",
-    year: "2023",
-    ganre: ["Shooter"],
-    isonline: "online",
-    site: "https://www.counter-strike.net/cs2",
-    developer: "Valve",
-    platforms: ["PC", "Windows"],
-    description:
-      "Counter-Strike: Global Offensive — новая часть популярной серии многопользовательских шутеров. Игра включает в себя новые карты, персонажей и оружие, а также улучшенную версию классической составляющей франшизы.",
-    rate: 7,
-    steam: 'https://store.steampowered.com/app/730/CounterStrike_2/',
-    price: 'Бесплатно',
-    },
-  {
-    id: 3,
-    image: "/dota.jpg",
-    about_header_img: "/dota2_about.jpg",
-    title: "Dota 2",
-    year: "2013",
-    ganre: ["MOBA", "Action/RPG"],
-    isonline: "online",
-    developer: "Valve",
-    platforms: ["PC", "Windows"],
-    site: "https://www.dota2.com/home",
-    description:
-      "Многопользовательская командная игра в жанре MOBA. Dota 2 — независимое продолжение карты-модификации DotA для Warcraft 3 от студии Valve, в которой две команды по пять человек сражаются друг с другом. Каждый игрок управляет одним героем с уникальными способностями и стилем игры.",
-    rate: 7.2,
-    steam: 'https://store.steampowered.com/app/570/Dota_2/',
-    price: 'Бесплатно'
-    },
-  {
-    id: 4,
     image: "/GTA.jpg",
     about_header_img: "/gta_about.jpg",
     title: "GTA V",
@@ -70,7 +36,7 @@ const CARD_DATA: TCardData[] = [
     price: 3000
     },
   {
-    id: 5,
+    id: 3,
     image: "/liers-bar.jpg",
     about_header_img: "/liers-about.jpg",
     title: "Lier's Bar",
@@ -86,25 +52,8 @@ const CARD_DATA: TCardData[] = [
     price: 600,
     steam: 'https://store.steampowered.com/app/3097560/Liars_Bar?snr=1_7_15__13'
     },
-  {
-    id: 6,
-    image: "/pubg.jpg",
-    about_header_img: "/pubg_about.jpg",
-    title: "PUBG: Battlegrounds",
-    year: "2017",
-    ganre: ["Королевская битва", "Шутер"],
-    isonline: "online",
-    developer: "Pubg Corp.",
-    platforms: ["PC", "Android", "IOS", "PS4", "XBox One"],
-    site: "https://pubg.com/ru/main",
-    description:
-      "PLAYERUNKNOWN'S BATTLEGROUNDS - это шутер в котором выигрывает последний оставшийся в живых участник. Начиная игру ни с чем, вы должны раздобыть оружие и припасы чтобы бороться за первое место и стать последним героем.",
-    rate: 5.8,
-    price: 'Бесплатно',
-    steam:'https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS?snr=1_7_15__13',
-    },
     {
-      id: 7,
+      id: 4,
       image: "https://avatars.mds.yandex.net/get-mpic/12507562/2a0000018d401bc686e840d75972f754f108/orig",
       about_header_img: "/rdr2about.jpg",
       title: "Red Dead Redemption 2",
@@ -122,7 +71,7 @@ const CARD_DATA: TCardData[] = [
     },
 
     {
-      id: 8,
+      id: 5,
       image: "https://cdn-ext.fanatical.com/production/product/1280x720/68310a3e-4b93-45dc-b195-643a7ff53d51.jpeg",
       about_header_img: "https://gepig.com/game_cover_bg_1190w/5948.jpg",
       title: "Mortal Kombat 11",
@@ -140,7 +89,7 @@ const CARD_DATA: TCardData[] = [
     },
 
     {
-      id: 9,
+      id: 6,
       image: "https://cdn1.epicgames.com/offer/f696430be718494fac1d6542cfb22542/EGS_MarvelsSpiderManMilesMorales_InsomniacGamesNixxesSoftware_S1_2560x1440-a0518b9f9f36a05294e37448df8a27a0",
       about_header_img: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1817190/ss_7eef506e91053092c0dd6b119ebc963aa11c0815.1920x1080.jpg?t=1729525947",
       title: "Marvel’s Spider-Man: Miles Morales",
@@ -157,10 +106,10 @@ const CARD_DATA: TCardData[] = [
       steam:'https://store.steampowered.com/app/1817190/Marvels_SpiderMan_Miles_Morales/',
     },
     {
-      id: 10,
+      id: 7,
       image: "https://avatars.mds.yandex.net/i?id=e79b17827d2f7f4bd72916e8a6bfd1e0_l-5232624-images-thumbs&n=13",
       about_header_img: "https://images.gog-statics.com/b5ca76120864b173c1a5cf7b2c01d331e4856051e07ae9a86bfd03b9ffde4ff8.jpg",
-      title: "Metrp Exodus",
+      title: "Metro Exodus",
       year: "2019",
       ganre: ["Экшен", "Шутер","Фантастика"],
       isonline: "offline",
@@ -174,7 +123,7 @@ const CARD_DATA: TCardData[] = [
       steam:'https://store.steampowered.com/app/412020/Metro_Exodus/',
     },
     {
-      id: 11,
+      id: 8,
       image: "https://i.ytimg.com/vi/64Far8IBv4M/maxresdefault.jpg",
       about_header_img: "https://i.ytimg.com/vi/IMAPIg2ZLiQ/maxresdefault.jpg",
       title: "Resident Evil Village",
@@ -191,7 +140,7 @@ const CARD_DATA: TCardData[] = [
       steam:'https://store.steampowered.com/agecheck/app/1196590/',
     },
     {
-      id: 12,
+      id: 9,
       image: "https://images.live.vkplay.ru/public_video_stream/record/c53b6989-85b4-43b0-ab70-4759a6ac06e7/custom_preview?change_time=1724892691",
       about_header_img: "https://ps-trophies.com/wp-content/uploads/2021/04/godofwarps4-2048x1152.jpg",
       title: "God of War",

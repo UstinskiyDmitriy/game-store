@@ -12,5 +12,5 @@ export interface TCardData {
   description?: string;
   rate?: number;
   steam?: string;
-  price?: string | number | undefined;
+  price?:  number | undefined;
 }

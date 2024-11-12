@@ -19,53 +19,31 @@ const cartSlice = createSlice({
       const card = action.payload;
       state.cart.push(card);
 
-      let price = 0;
-      if (typeof card.price === 'number') {
-        price = card.price;
-      } else if (typeof card.price === 'string' && card.price.toLowerCase() === 'бесплатно') {
-        price = 0;
-      }
-
+      const price = card.price || 0; 
       state.total += price;
     },
-    removeFromCart: (state, action: PayloadAction<number>) => {
-      const cardId = action.payload;
-      const removedCard = state.cart.find(card => card.id === cardId);
+    removeFromCart: (state, action: PayloadAction<{ id: number, count: number }>) => {
+      const { id, count } = action.payload;
+      const removedCard = state.cart.find(card => card.id === id);
       if (removedCard) {
-        let price = 0;
-        if (typeof removedCard.price === 'number') {
-          price = removedCard.price;
-        } else if (typeof removedCard.price === 'string' && removedCard.price.toLowerCase() === 'бесплатно') {
-          price = 0;
-        }
-
-        state.total -= price;
+        const price = removedCard.price || 0; 
+        state.total -= price * count;
       }
-      state.cart = state.cart.filter(card => card.id !== cardId);
+      state.cart = state.cart.filter(card => card.id !== id);
     },
-    incrementQuantity: (state, action: PayloadAction<{ id: number, price: number | string | undefined }>) => {
+    incrementQuantity: (state, action: PayloadAction<{ id: number, price: number | undefined }>) => {
       const { id, price } = action.payload;
       const item = state.cart.find(card => card.id === id);
       if (item) {
-        let priceValue = 0;
-        if (typeof price === 'number') {
-          priceValue = price;
-        } else if (typeof price === 'string' && price.toLowerCase() === 'бесплатно') {
-          priceValue = 0;
-        }
+        const priceValue = typeof price === 'number' ? price : 0; 
         state.total += priceValue;
       }
     },
-    decrementQuantity: (state, action: PayloadAction<{ id: number, price: number | string | undefined}>) => {
+    decrementQuantity: (state, action: PayloadAction<{ id: number, price: number | undefined }>) => {
       const { id, price } = action.payload;
       const item = state.cart.find(card => card.id === id);
       if (item) {
-        let priceValue = 0;
-        if (typeof price === 'number') {
-          priceValue = price;
-        } else if (typeof price === 'string' && price.toLowerCase() === 'бесплатно') {
-          priceValue = 0;
-        }
+        const priceValue = typeof price === 'number' ? price : 0; 
         state.total -= priceValue;
       }
     },

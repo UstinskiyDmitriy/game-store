@@ -18,7 +18,7 @@ export default function CartPage() {
                 <BasketCard
                   image={item.image}
                   title={item.title}
-                  price={item.price}
+                  price={item?.price}
                   id={item.id}
                   key={item.id}
                 />
