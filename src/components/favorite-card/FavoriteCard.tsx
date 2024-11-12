@@ -20,7 +20,7 @@ export default function FavoriteCard({id,image, title,year,site,rate,steam,price
     <div>
       <div className={`${s.card_wrapper} ${deletingId === id ? s.deleting : ''}`}>
             <div className={s.image_wrapper}>
-              <img src={image} alt={title} />
+              <img src={image} alt={title} loading="lazy"/>
             </div>
 
             <div className={s.info}>

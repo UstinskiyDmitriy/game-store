@@ -35,7 +35,7 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
   return (
     <div className={s.card} key={id}>
       <div className={s.card_img_wrapper}>
-        <img src={image} alt="" className={s.card_img} />
+        <img src={image} alt="" className={s.card_img} loading="lazy"/>
       </div>
       <div className={s.about_wrapper}>
         <div className={s.title}>

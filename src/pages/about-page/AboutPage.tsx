@@ -11,7 +11,7 @@ const selectedCard = useSelector(
 const platforms = selectedCard.platforms?.join(', ')
   return (
     <div className={s.main}>
-      <img src={selectedCard.about_header_img} alt="" className={s.header_img}/>
+      <img src={selectedCard.about_header_img} alt="" className={s.header_img} loading="lazy"/>
       <div className={s.about_card}><AboutCard /></div>
       <main className={s.main_content}>
         <div className={s.game_desc}>

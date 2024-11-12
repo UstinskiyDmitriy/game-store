@@ -59,7 +59,7 @@ export default function GameCard({
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <div className={s.image_wrapper}>
-          <img src={image} alt={title} className={s.image} />
+          <img src={image} alt={title} className={s.image} loading="lazy"/>
         </div>
       </Link>
       <div className={s.title}>

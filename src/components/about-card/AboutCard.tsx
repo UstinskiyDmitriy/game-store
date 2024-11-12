@@ -13,7 +13,7 @@ export default function AboutCard() {
   
   return (
     <div className={s.main}>
-      <img src={selectedCard.image} alt="" className={s.selected_image} />
+      <img src={selectedCard.image} alt="" className={s.selected_image} loading="lazy"/>
       <div className={s.button_group}>
         <button><NotebookPen />Написать отзыв</button>
         <button><Layers3/> Добавить в подборку</button>
