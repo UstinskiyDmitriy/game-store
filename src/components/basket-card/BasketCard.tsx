@@ -3,7 +3,11 @@ import { TCardData } from "../../interfaces/cardInterface";
 import { LucideTrash2 } from "lucide-react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeFromCart, incrementQuantity, decrementQuantity } from "../../services/slices/cartSlice";
+import {
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+} from "../../services/slices/cartSlice";
 import LikeButton from "../../ui/like-button/LikeButton";
 
 export default function BasketCard({ id, image, title, price }: TCardData) {
@@ -13,14 +17,14 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
   const handlePlus = () => {
     if (count < 5) {
       setCount(count + 1);
-      dispatch(incrementQuantity({ id, price }));
+      dispatch(incrementQuantity({ id, price: price || 0 })); // Добавляем проверку на undefined
     }
   };
 
   const handleMinus = () => {
     if (count > 1) {
       setCount(count - 1);
-      dispatch(decrementQuantity({ id, price }));
+      dispatch(decrementQuantity({ id, price: price || 0 })); // Добавляем проверку на undefined
     }
   };
 
@@ -53,7 +57,7 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
               <p>+</p>
             </div>
           </div>
-          <p>{price * count} руб.</p>
+          <p>{(price || 0) * count} руб.</p>
         </div>
       </div>
     </div>

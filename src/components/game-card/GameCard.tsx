@@ -18,7 +18,7 @@ interface TGameCard {
   id: number;
   image: string | undefined;
   title: string;
-  price: number | string | undefined;
+  price: number | undefined;
   isonline?: string;
   card: TCard;
   onClick: () => void;
@@ -64,11 +64,7 @@ export default function GameCard({
       </Link>
       <div className={s.title}>
         <p>{title}</p>
-        {price === "Бесплатно" ? (
-          <p>Цена: {price}</p>
-        ) : (
-          <p>Цена: {price} рублей </p>
-        )}
+        <p>Цена: {price} рублей </p>
       </div>
       <div className={s.overlay}>
         <LikeButton id={id} size={32} />

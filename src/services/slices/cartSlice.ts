@@ -19,7 +19,7 @@ const cartSlice = createSlice({
       const card = action.payload;
       state.cart.push(card);
 
-      const price = card.price || 0; 
+      const price = card.price || 0; // Добавляем проверку на undefined
       state.total += price;
     },
     removeFromCart: (state, action: PayloadAction<{ id: number, count: number }>) => {
@@ -35,7 +35,7 @@ const cartSlice = createSlice({
       const { id, price } = action.payload;
       const item = state.cart.find(card => card.id === id);
       if (item) {
-        const priceValue = typeof price === 'number' ? price : 0; 
+        const priceValue = price || 0; 
         state.total += priceValue;
       }
     },
@@ -43,7 +43,7 @@ const cartSlice = createSlice({
       const { id, price } = action.payload;
       const item = state.cart.find(card => card.id === id);
       if (item) {
-        const priceValue = typeof price === 'number' ? price : 0; 
+        const priceValue = price || 0; 
         state.total -= priceValue;
       }
     },
