@@ -17,7 +17,7 @@ const platforms = selectedCard.platforms?.join(', ')
         <div className={s.game_desc}>
         <h1>{selectedCard.title}</h1>
         <div className={s.ganre_wrapper}>
-          {selectedCard.ganre?.map((item,)=> <p key={selectedCard.id}>{item}</p>)}
+          {selectedCard.ganre?.map((item, index)=> <p key={index}>{item}</p>)}
         </div>
         <dl className={s.game_info_table}>
         <dt>Дата выхода</dt>

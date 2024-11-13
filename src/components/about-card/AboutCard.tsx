@@ -6,6 +6,7 @@ import { Rate } from "antd";
 import LikeButton from "../../ui/like-button/LikeButton";
 
 
+
 export default function AboutCard() {
   const selectedCard = useSelector(
     (state: RootState) => state.cards.selectedCard

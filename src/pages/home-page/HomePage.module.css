@@ -20,11 +20,12 @@
   }
   .main_view {
     height: auto;
-    margin-block-start: 9vh;
+    margin-block-start: 0vh;
   }
 
   .cards_wrapper {
-    margin-block-start: 20vh;
+    margin-block-start: 16vh;
+    margin-block-end: 5vh;
     column-gap: 20px;
     row-gap: 0;
   }

@@ -13,8 +13,8 @@ export default function GameInfo({ title, year, genre, isOnline }: GameInfoProps
       <h2>{title}</h2>
       <ul>
         <li>{year}</li>
-        {genre?.map((item) => 
-         <li key={title}>{item}</li>
+        {genre?.map((item, index) => 
+         <li key={index}>{item}</li>
         )}
        
         <li>{isOnline}</li>

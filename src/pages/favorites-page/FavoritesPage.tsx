@@ -27,8 +27,8 @@ export default function FavoritesPage() {
         {favorites.length === 0 && (
           <p className={s.empty_message}>Список желаемого пуст</p>
         )}
-        {favorites.map((item) => (
-          <div className={s.card_wrapper}>
+        {favorites.map((item, index) => (
+          <div className={s.card_wrapper}  key={index}>
             <FavoriteCard 
             id={item.id}
             image={item.image}

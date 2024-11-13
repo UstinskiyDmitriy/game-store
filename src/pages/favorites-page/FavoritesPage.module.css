@@ -31,9 +31,14 @@
 }
 
 @media screen and (width < 1200px) {
+
+  .header_img {
+    height: 70vw
+  }
   .main_content {
-    margin: 2%;
+    padding: 1vh 1vw 0;
     row-gap: 0;
+    margin-block-end: 10vh;
   }
 
   .card_wrapper {
