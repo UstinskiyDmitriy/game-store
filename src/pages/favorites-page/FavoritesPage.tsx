@@ -36,7 +36,6 @@ export default function FavoritesPage() {
             year={item.year}
             site={item.site}
             rate={item.rate}
-            steam={item.steam}
             price={item.price}
             removeCard={removeCard}
             deletingId={deletingId}

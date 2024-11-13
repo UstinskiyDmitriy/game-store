@@ -1,6 +1,5 @@
 import s from './FavoriteCard.module.css'
 import { Trash2 } from 'lucide-react'
-import { Link } from 'react-router-dom'
 
 interface FavoriteCard {
   id: number;
@@ -15,7 +14,7 @@ interface FavoriteCard {
   deletingId: number | null
 }
 
-export default function FavoriteCard({id,image, title,year,site,rate,steam,price, removeCard, deletingId}:FavoriteCard) {
+export default function FavoriteCard({id,image, title,year,site,rate,price, removeCard, deletingId}:FavoriteCard) {
   return (
     <div>
       <div className={`${s.card_wrapper} ${deletingId === id ? s.deleting : ''}`}>
@@ -37,12 +36,8 @@ export default function FavoriteCard({id,image, title,year,site,rate,steam,price
                 <dt>Рейтинг</dt>
                 <dd>{rate} из 10</dd>
 
-                <dt>Купить в стим</dt>
-                <dd>
-                  <Link to={`${steam}`} target="_blank">
-                    <img className={s.steam_img} src="/steam.png" alt="" />
-                  </Link>
-                </dd>
+              
+            
                 <dt>Цена</dt>
 
                 <dd>
