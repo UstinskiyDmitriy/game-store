@@ -83,7 +83,7 @@
 }
 
 .cart:hover {
-  background-color: rgb(255, 72, 0);
+  background-color: var(--button-hover)
 }
 
 .cart:active {

@@ -1,19 +1,48 @@
 .overlay {
-  position: absolute;
+  position: relative;
   height: 100%;
   width:100%;
-  z-index: -1;
-  
+  z-index: 1;
 }
 
 .background_img{
+  position: absolute;
   width: 100%;
   height: 100%;
 }
 
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top:50%;
+  left: 0;
+  width:99%;
+  padding: 0 1vw;
+}
+
+.arrows div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  background-color: #33333399;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
 @media screen and (width < 1200px ) {
+  .overlay{
+    position: static;
+  }
   .background_img {
     width: 100%;
     height: 30vh
+  }
+
+  .arrows {
+    top: 100%;
   }
 }

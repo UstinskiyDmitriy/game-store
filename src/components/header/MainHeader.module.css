@@ -35,7 +35,7 @@
 }
 
 .main_logo:hover {
-  color: orange;
+  color: var(--button-background)
 }
 
 .main_logo h3 {
@@ -52,12 +52,12 @@
   border: none;
   border-radius: 20px;
   color: #fff;
-  background-color: orangered;
+  background-color: var(--button-background);
   font-size: 18px;
 }
 
 .catalog:hover {
-  background-color: red;
+  background-color: var(--button-hover)
 }
 
 .right {
