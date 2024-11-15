@@ -1,4 +1,4 @@
-import { Gamepad2, Heart, House } from "lucide-react";
+import { GalleryVerticalEnd, Gamepad2, Heart, House } from "lucide-react";
 import { useEffect, useState } from "react";
 import s from "./MainHeader.module.css";
 import CartButton from "../../ui/cart-button/CartButton";
@@ -30,7 +30,7 @@ function MainHeader() {
 
   return (
     <header className={s.header}>
-      <button className={s.catalog}>Каталог</button>
+      <button className={s.catalog}><GalleryVerticalEnd/> Каталог</button>
       <Link to="/" className={s.main_logo}>
         {!isMobile && (
           <>

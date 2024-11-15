@@ -9,7 +9,6 @@
 .background_img{
   width: 100%;
   height: 100%;
-  filter:brightness(80%)
 }
 
 @media screen and (width < 1200px ) {

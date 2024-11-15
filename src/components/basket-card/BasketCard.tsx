@@ -9,6 +9,7 @@ import {
   decrementQuantity,
 } from "../../services/slices/cartSlice";
 import LikeButton from "../../ui/like-button/LikeButton";
+import { Link } from "react-router-dom";
 
 export default function BasketCard({ id, image, title, price }: TCardData) {
   const dispatch = useDispatch();
@@ -35,7 +36,10 @@ export default function BasketCard({ id, image, title, price }: TCardData) {
   return (
     <div className={s.card} key={id}>
       <div className={s.card_img_wrapper}>
+        <Link to={`/about/${id}`}>
         <img src={image} alt="" className={s.card_img} loading="lazy"/>
+        </Link>
+       
       </div>
       <div className={s.about_wrapper}>
         <div className={s.title}>

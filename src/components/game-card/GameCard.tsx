@@ -1,10 +1,10 @@
 import s from "./GameCard.module.css";
 import LikeButton from "../../ui/like-button/LikeButton";
 import { Link } from "react-router-dom";
-import CartButton from "../../ui/cart-button/CartButton";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../services/store/store";
 import { addToCart } from "../../services/slices/cartSlice";
+import { ShoppingCart } from "lucide-react";
 
 interface TCard {
   id: number;
@@ -30,7 +30,6 @@ export default function GameCard({
   title,
   price,
   onClick,
-  card,
 }: TGameCard) {
   const dispatch = useDispatch();
   const isInCart = useSelector((state: RootState) =>
@@ -55,7 +54,7 @@ export default function GameCard({
   return (
     <div className={s.main} onClick={onClick}>
       <Link
-        to={`about/${card.id}`}
+        to={`about/${id}`}
         style={{ textDecoration: "none", color: "inherit" }}
       >
         <div className={s.image_wrapper}>
@@ -72,7 +71,7 @@ export default function GameCard({
           className={isInCart ? s.cart_disabled : s.cart}
           onClick={handleAddToCart}
         >
-          <CartButton />
+          <ShoppingCart />
         </div>
       </div>
     </div>

@@ -44,7 +44,11 @@
 }
 
 .catalog {
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 15px;
   border: none;
   border-radius: 20px;
   color: #fff;

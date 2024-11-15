@@ -3,20 +3,18 @@
 }
 
 .header_img {
-  position: sticky;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
 }
 
 .about_card {
-  position: absolute;
-  width: 25%;
-  left: 1vw;
-  top: 51vh;
 }
 
-.main_content {
-  margin:2vh 3vw 15vh 27vw; 
+.main_content_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+  margin:2vh 3vw 5vh 2vw; 
 }
 
 .game_desc {
@@ -85,16 +83,12 @@
     display: none;
   }
 
-  .about_card {
-    display:contents;
-  }
+ .main_content_wrapper {
+  flex-direction: column;
+  margin-block-end: 15vh;
+ }
 
   .game_desc {
     width: 90%;
-  }
-
-  .main_content {
-   margin: 5vh 2vw;
-   
   }
 }
