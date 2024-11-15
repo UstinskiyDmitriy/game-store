@@ -129,6 +129,10 @@ left: 15px;
     padding: 2.5vh 6vw;
     bottom:0;
   }
+
+  .catalog {
+    background-color: inherit;
+  }
   .header ul  {
     display: none;
   }

@@ -30,7 +30,7 @@ function MainHeader() {
 
   return (
     <header className={s.header}>
-      <button className={s.catalog}><GalleryVerticalEnd/> Каталог</button>
+      <button className={s.catalog}><GalleryVerticalEnd/>{!isMobile && 'Каталог'}</button>
       <Link to="/" className={s.main_logo}>
         {!isMobile && (
           <>
@@ -38,7 +38,7 @@ function MainHeader() {
             <h3>Game</h3>
           </>
         )}
-        {isMobile && <House size={40} className={s.main_logo}/>}
+        {isMobile && <House size={26} className={s.main_logo}/>}
       </Link>
 
       <div className={s.right}>
