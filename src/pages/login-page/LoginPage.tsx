@@ -1,40 +1,61 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useEffect, useRef } from 'react';
 import s from './LoginPage.module.css';
-import RegisterPage from '../register-page/RegisterPage';
+import { useDispatch, useSelector } from 'react-redux';
 
-function Login() {
+import { RootState } from '../../services/store/store';
+import RegisterPage from '../register-page/RegisterPage';
+import { clearError, login } from '../../services/slices/userSlice';
+
+interface LoginPageProps {
+  closeModal: () => void;
+}
+
+function Login({closeModal}:LoginPageProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showLogin, setShowLogin] = useState(true);
-  const [error, setError] = useState('');
+  const dispatch = useDispatch();
+  const error = useSelector((state: RootState) => state.user.error);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find((u: { email: string; }) => u.email === email);
-
-    if (!user) {
-      setError('Пользователь не найден');
-      return;
-    }
-
-    if (user.password !== password) {
-      setError('Неверный пароль');
-      return;
-    }
-
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    window.location.reload();
+    dispatch(login({ email, password }));
   };
 
+  const handleCloseModal = () => {
+    setShowLogin(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        handleCloseModal();
+      }
+    };
+
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleCloseModal();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscKey);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, []);
+
   if (!showLogin) {
-    return <RegisterPage setShowLogin={setShowLogin} />;
+    return <RegisterPage setShowLogin={setShowLogin} closeModal={closeModal}/>;
   }
 
   return (
     <div className={s.authContainer}>
-      <div className={s.formContainer}>
+      <div className={s.formContainer} ref={modalRef}>
         <h2 className={s.title}>Вход</h2>
         <form className={s.form} onSubmit={handleSubmit}>
           <input
@@ -42,14 +63,20 @@ function Login() {
             type="email"
             placeholder="Почта"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (error) dispatch(clearError());
+            }}
           />
           <input
             className={s.input}
             type="password"
             placeholder="Пароль"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              if (error) dispatch(clearError());
+            }}
           />
           <button className={s.button} type="submit">
             Войти
@@ -58,10 +85,7 @@ function Login() {
         {error && <p className={s.error}>{error}</p>}
         <p className={s.switchText}>
           Нет аккаунта?
-          <button 
-            className={s.switchButton} 
-            onClick={() => setShowLogin(false)}
-          >
+          <button className={s.switchButton} onClick={() => setShowLogin(false)}>
             Регистрация
           </button>
         </p>

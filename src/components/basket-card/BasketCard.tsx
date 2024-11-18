@@ -1,8 +1,8 @@
+// BasketCard.tsx
 import s from "./BasketCard.module.css";
 import { TCardData } from "../../interfaces/cardInterface";
 import { LucideTrash2 } from "lucide-react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   removeFromCart,
   incrementQuantity,
@@ -10,36 +10,41 @@ import {
 } from "../../services/slices/cartSlice";
 import LikeButton from "../../ui/like-button/LikeButton";
 import { Link } from "react-router-dom";
+import { RootState } from "../../services/store/store";
+
 
 export default function BasketCard({ id, image, title, price }: TCardData) {
   const dispatch = useDispatch();
-  const [count, setCount] = useState(1);
+  
+  // Получаем количество и цену из состояния корзины
+  const cartItem = useSelector((state: RootState) => 
+    state.cart.cart.find(item => item.id === id)
+  );
+
+  const count = cartItem?.count || 1;  // Если товар в корзине не найден, показываем 1
 
   const handlePlus = () => {
     if (count < 5) {
-      setCount(count + 1);
-      dispatch(incrementQuantity({ id, price: price || 0 })); // Добавляем проверку на undefined
+      dispatch(incrementQuantity({ id }));
     }
   };
 
   const handleMinus = () => {
     if (count > 1) {
-      setCount(count - 1);
-      dispatch(decrementQuantity({ id, price: price || 0 })); // Добавляем проверку на undefined
+      dispatch(decrementQuantity({ id }));
     }
   };
 
   const removeCard = () => {
-    dispatch(removeFromCart({ id, count }));
+    dispatch(removeFromCart({ id }));
   };
 
   return (
     <div className={s.card} key={id}>
       <div className={s.card_img_wrapper}>
         <Link to={`/about/${id}`}>
-        <img src={image} alt="" className={s.card_img} loading="lazy"/>
+          <img src={image} alt="" className={s.card_img} loading="lazy"/>
         </Link>
-       
       </div>
       <div className={s.about_wrapper}>
         <div className={s.title}>

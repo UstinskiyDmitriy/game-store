@@ -77,9 +77,7 @@ export default function FavoriteCard({
             <dt>Цена</dt>
             <dd>{price} рублей</dd>
           </dl>
-        </div>
-
-        <div className={s.buttons_wrapper}>
+          <div className={s.buttons_wrapper}>
           <Tooltip
             title={isInCart ? "Товар уже в корзине" : "Добавить в корзину"}
             placement="top"
@@ -100,6 +98,9 @@ export default function FavoriteCard({
             <Trash2 className={s.remove_button} size={34} />
           </div>
         </div>
+        </div>
+
+     
       </div>
     </div>
   );

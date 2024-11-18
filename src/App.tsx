@@ -8,7 +8,6 @@ import MainHeader from './components/header/MainHeader';
 import CartPage from './pages/cart-page/CartPage';
 
 function App() {
-
   return (
     <div className={s.main}>
       <MainHeader />
@@ -19,6 +18,7 @@ function App() {
         <Route path='/news' element={<NewsPage />} />
         <Route path='/cart' element={<CartPage />}/>
       </Routes>
+    
     </div>
   );
 }
