@@ -4,6 +4,7 @@ interface User {
   name: string;
   email: string;
   password: string;
+  isAuth: boolean
 }
 
 interface UserState {
