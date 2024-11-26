@@ -4,20 +4,21 @@ interface User {
   name: string;
   email: string;
   password: string;
-  isAuth: boolean;
 }
 
 interface UserState {
   currentUser: User | null;
   error: string | null;
+  isAuth: boolean;
 }
 
 const initialState: UserState = {
   currentUser: JSON.parse(localStorage.getItem('currentUser') || 'null'),
   error: null,
+  isAuth: false
 };
 
-const userSlice = createSlice({
+const authSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
@@ -65,5 +66,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { login, register, logout, clearError } = userSlice.actions;
-export default userSlice.reducer;
+export const { login, register, logout, clearError } = authSlice.actions;
+export default authSlice.reducer;

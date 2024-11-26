@@ -2,6 +2,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import CARD_DATA from '../../data/CardData';
 import { TCardData } from '../../interfaces/cardInterface';
+import { loadFromLocalStorage, saveToLocalStorage } from '../../utils/localStorage';
 
 export interface GameCard extends TCardData {
   liked?: boolean;
@@ -17,13 +18,23 @@ interface CardsState {
   filteredCards: GameCard[];
 }
 
+const FAVORITES_STORAGE_KEY = 'favorites';
+
+const savedCards = loadFromLocalStorage<GameCard[]>(FAVORITES_STORAGE_KEY,[])
+
 const initialState: CardsState = {
-  cards: CARD_DATA.map((card) => ({ ...card, liked: false })),
+  cards: CARD_DATA.map((card) => ({
+    ...card,
+    liked: savedCards.some((favCard) => favCard.id === card.id), // Синхронизация лайков
+  })),
   selectedCard: CARD_DATA[0],
-  favoriteCards: [],
+  favoriteCards: savedCards,
   activeStatusIndex: null,
   searchQuery: '',
-  filteredCards: CARD_DATA.map((card) => ({ ...card, liked: false })),
+  filteredCards: CARD_DATA.map((card) => ({
+    ...card,
+    liked: savedCards.some((favCard) => favCard.id === card.id), // Синхронизация лайков
+  })),
 };
 
 const cardsSlice = createSlice({
@@ -44,7 +55,7 @@ const cardsSlice = createSlice({
       const cardId = action.payload;
 
       state.favoriteCards = state.favoriteCards.filter(card => card.id !== cardId);
-
+      saveToLocalStorage(FAVORITES_STORAGE_KEY, state.favoriteCards)
       const cardIndex = state.cards.findIndex(card => card.id === cardId);
       if (cardIndex !== -1) {
         state.cards[cardIndex].liked = false;
@@ -57,13 +68,20 @@ const cardsSlice = createSlice({
     setLike: (state, action: PayloadAction<number>) => {
       const cardId = action.payload;
       const cardIndex = state.cards.findIndex((card) => card.id === cardId);
+    
       if (cardIndex !== -1) {
-        state.cards[cardIndex].liked = !state.cards[cardIndex].liked;
-        if (state.cards[cardIndex].liked) {
-          state.favoriteCards.push(state.cards[cardIndex]);
+        const card = state.cards[cardIndex];
+        card.liked = !card.liked; 
+    
+        if (card.liked) {
+         
+          state.favoriteCards.push(card);
         } else {
-          state.favoriteCards = state.favoriteCards.filter((card) => card.id !== cardId);
+          
+          state.favoriteCards = state.favoriteCards.filter((favCard) => favCard.id !== cardId);
         }
+    
+        saveToLocalStorage(FAVORITES_STORAGE_KEY, state.favoriteCards);
       }
     },
   },
