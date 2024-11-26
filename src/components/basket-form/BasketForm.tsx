@@ -6,6 +6,7 @@ import { RootState } from "../../services/store/store";
 export default function BasketForm() {
   const total = useSelector((state: RootState) => state.cart.total);
   const discont = total - total * 0.03;
+
   return (
     <form className={s.main} action="submit">
       <h3>Ваш заказ</h3>

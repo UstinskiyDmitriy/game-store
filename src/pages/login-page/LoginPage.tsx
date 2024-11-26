@@ -1,62 +1,30 @@
-import { FormEvent, useState, useEffect, useRef } from 'react';
+import { FormEvent, useState, useRef } from 'react';
 import s from './LoginPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { RootState } from '../../services/store/store';
-import RegisterPage from '../register-page/RegisterPage';
-import { clearError, login } from '../../services/slices/userSlice';
+import { clearError, login } from '../../services/slices/authSlice';
 
-interface LoginPageProps {
+interface LoginProps {
   closeModal: () => void;
 }
 
-function Login({closeModal}:LoginPageProps) {
+function Login({closeModal}:LoginProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showLogin, setShowLogin] = useState(true);
   const dispatch = useDispatch();
   const error = useSelector((state: RootState) => state.user.error);
   const modalRef = useRef<HTMLDivElement>(null);
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(login({ email, password }));
+    if(error === '') {
+      closeModal()
+    }
   };
-
-  const handleCloseModal = () => {
-    setShowLogin(false);
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        handleCloseModal();
-      }
-    };
-
-    const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        handleCloseModal();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscKey);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscKey);
-    };
-  }, []);
-
-  if (!showLogin) {
-    return <RegisterPage setShowLogin={setShowLogin} closeModal={closeModal}/>;
-  }
 
   return (
     <div className={s.authContainer}>
       <div className={s.formContainer} ref={modalRef}>
-        <h2 className={s.title}>Вход</h2>
         <form className={s.form} onSubmit={handleSubmit}>
           <input
             className={s.input}
@@ -83,12 +51,6 @@ function Login({closeModal}:LoginPageProps) {
           </button>
         </form>
         {error && <p className={s.error}>{error}</p>}
-        <p className={s.switchText}>
-          Нет аккаунта?
-          <button className={s.switchButton} onClick={() => setShowLogin(false)}>
-            Регистрация
-          </button>
-        </p>
       </div>
     </div>
   );

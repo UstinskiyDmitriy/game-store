@@ -56,6 +56,24 @@
   transition: .1s ease-in-out;
 }
 
+.lower_buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart_button:hover{
+  color:orange
+}
+
+.cart_button {
+  color: #fff;
+}
+
+.cart_button_disabled {
+  color:#333
+}
+
 @media screen and (max-width: 1200px) {
   .main {
     width: 100%;
