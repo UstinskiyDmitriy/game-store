@@ -11,7 +11,6 @@ interface AboutCardProps {
   selectedCard: GameCard
 }
 export default function AboutCard({selectedCard}:AboutCardProps) {
-
   const dispatch = useDispatch()
   const isInCart = useSelector((state: RootState) =>
     state.cart.cart.some((item) => item.id === selectedCard.id)

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { RootState } from "../../services/store/store";
 import { addToCart } from "../../services/slices/cartSlice";
 import { Tooltip } from "antd";
+
 interface FavoriteCard {
   id: number;
   image: string | undefined;

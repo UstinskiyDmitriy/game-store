@@ -16,12 +16,12 @@ import { RootState } from "../../services/store/store";
 export default function BasketCard({ id, image, title, price }: TCardData) {
   const dispatch = useDispatch();
   
-  // Получаем количество и цену из состояния корзины
+  // Получаю количество и цену из состояния корзины
   const cartItem = useSelector((state: RootState) => 
     state.cart.cart.find(item => item.id === id)
   );
 
-  const count = cartItem?.count || 1;  // Если товар в корзине не найден, показываем 1
+  const count = cartItem?.count || 1; 
 
   const handlePlus = () => {
     if (count < 5) {

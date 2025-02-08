@@ -9,13 +9,11 @@ export interface PasswordValidationResult {
   error: string;
 }
 
-// Валидация email
 export const validateEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
 
-// Валидация пароля
 export const validatePassword = (password: string): PasswordValidationResult => {
   const minLength = 8;
   const maxLength = 30;
@@ -57,17 +55,17 @@ export const validatePassword = (password: string): PasswordValidationResult => 
   };
 };
 
-// Валидация подтверждения пароля
+
 export const validateConfirmPassword = (password: string, confirmPassword: string): string => {
   return password !== confirmPassword ? "Passwords don't match" : '';
 };
 
-// Проверка наличия ошибок
+
 export const hasErrors = (errors: ValidationErrors): boolean => {
   return Object.values(errors).some(error => error !== '');
 };
 
-// Валидация всей формы
+
 export const validateForm = (
   email: string,
   password: string,

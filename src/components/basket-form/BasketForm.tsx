@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../services/store/store";
 
 export default function BasketForm() {
+
   const total = useSelector((state: RootState) => state.cart.total);
   const discont = total - total * 0.03;
 

@@ -3,8 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import s from "./AboutPage.module.css";
 import { RootState } from "../../services/store/store";
 import AboutCard from "../../components/about-card/AboutCard";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import { setSelectedCard } from "../../services/slices/gameSlice";
+
+
 
 export default function AboutGame() {
   const { id } = useParams();

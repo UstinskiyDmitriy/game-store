@@ -1,4 +1,3 @@
-// cartSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { GameCard } from './gameSlice';
 import { loadFromLocalStorage, saveToLocalStorage } from '../../utils/localStorage';
