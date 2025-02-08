@@ -1,25 +1,9 @@
-const BASE_URL = 'http://localhost:3001'; // или ваш URL
+import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const API = {
-  getAllGames: async () => {
-    try {
-      const response = await fetch(`${BASE_URL}/games`);
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    } catch (error) {
-      console.error('Error fetching games:', error);
-      throw error;
-    }
-  },
+const API_URL = '/db.json';
 
-  getGameById: async (id: number) => {
-    try {
-      const response = await fetch(`${BASE_URL}/games/${id}`);
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.json();
-    } catch (error) {
-      console.error('Error fetching game:', error);
-      throw error;
-    }
-  }
-};
+export const fetchCards = createAsyncThunk('cards/fetchCards', async () => {
+  const response = await axios.get(API_URL);
+  return response.data;
+});

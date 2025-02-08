@@ -1,5 +1,5 @@
 {
-  "name": "calculator",
+  "name": "rg_store",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/app": "6.0.2",
+    "@capacitor/cli": "6.2.0",
+    "@capacitor/core": "6.2.0",
+    "@capacitor/haptics": "6.0.2",
+    "@capacitor/keyboard": "6.0.3",
+    "@capacitor/status-bar": "6.0.2",
     "@reduxjs/toolkit": "^2.3.0",
+    "@supabase/supabase-js": "^2.47.10",
     "antd": "^5.21.6",
     "axios": "^1.7.7",
     "lucide-react": "^0.453.0",
